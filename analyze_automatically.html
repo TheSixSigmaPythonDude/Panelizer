@@ -1,0 +1,58 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="./script.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div class="ui container">
+      <br>
+      <div class="ui center aligned container">
+        <p class="ui large header">Enter information about your panel</p>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <br>
+      <div class="ui grid">
+        <div class="four wide column">
+        </div>
+          <div class="ui form">
+            <div class="inline fields">
+              <div class="field">
+                <input id="option1x" type="text" placeholder="X Dimension" name="Option 1 X" class="panel-option-search">
+              </div>
+              <div class="field">
+                <input id="option1y" type="text" placeholder="Y Dimension" name="Option 1 X" class="panel-option-search">
+              </div>
+              <div class="field">
+                <input id="pcb1" type="text" placeholder="Number of PCBs" name="PCB" class="panel-option-search">
+              </div>
+            </div>
+          </div>
+      </div>
+      <br>
+      <div class="ui center aligned container">
+        <button class="ui button" onclick="mainFunction()" name="Submit2" value=0>Go</button>
+        <button class="ui button" onclick="clearInputs()" name="Submit3" value=0>Clear</button>
+        <select id='vendor' class="ui simple dropdown">
+          <option value="0">Avary</option>
+          <option value="1">AT&S</option>
+          <option value="2">Compeq</option>
+          <option value="3">AKMMV</option>
+          <option value="4">UMTC</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="ui grid">
+          <div class="three wide column">
+          </div>
+          <div id='result'></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
