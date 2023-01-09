@@ -78,8 +78,8 @@ function sortTable(n) {
 
 /// Panelization functions
 function xImpedance0Degrees(panel_x,panel_y,wpw,wpl,strip_to_edge_width,strip_to_edge_length,strip_to_strip_coupon,strip_to_strip_min) {
-    var boards_in_x = Math.floor((wpw - 2*strip_to_edge_width - strip_to_strip_coupon + 2*1.2) / (panel_x + 1.2));
-    var boards_in_y = Math.floor((wpl - 2*strip_to_edge_length + 1.2) / (panel_y + 1.2));
+    var boards_in_x = Math.floor((wpw - 2*strip_to_edge_width - strip_to_strip_coupon + 2*strip_to_strip_min) / (panel_x + strip_to_strip_min));
+    var boards_in_y = Math.floor((wpl - 2*strip_to_edge_length + strip_to_strip_min) / (panel_y + strip_to_strip_min));
     return ['X impedance - 0 degrees',boards_in_x * boards_in_y];
 };
 
@@ -195,7 +195,6 @@ function directionCheck(direction,wpw,wpl,strip_to_edge_width,strip_to_edge_leng
     set_x.forEach(x => {
         solutionspace_x.push(pcbs*bestStrips(x,panel_y,wpw,wpl,strip_to_edge_width,strip_to_edge_length,strip_to_strip_coupon,strip_to_strip_min))
     });
-    console.log('Starting')
     for (index = 0; index < set_x.length; index++) {
         x_result = solutionspace_x[index] - solutionspace_x[0]
         if (x_result < 0) {
@@ -213,7 +212,7 @@ function directionCheck(direction,wpw,wpl,strip_to_edge_width,strip_to_edge_leng
             index = set_x.length
         }
     }
-    console.log('Ending')
+
     set_y.forEach(y => {
         solutionspace_y.push(pcbs*bestStrips(panel_x,y,wpw,wpl,strip_to_edge_width,strip_to_edge_length,strip_to_strip_coupon,strip_to_strip_min))
     });
