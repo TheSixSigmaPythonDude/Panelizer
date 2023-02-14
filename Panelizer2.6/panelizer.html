@@ -1,0 +1,148 @@
+<html lang="en" dir="ltr">
+
+
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="icon" type="image/x-icon" href="./Apple.png"/>
+
+    <script src="./panelizer2.6.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+
+
+  <body>
+    <div class="header">
+        <h1 class="title"><em>Panelizer 2</em></h1>
+    </div>
+
+    <br>
+    <br>
+    
+    <div class="ui form">
+      <div class="inline fields">
+        <div class="field">
+          <input id="option1x" type="text" placeholder="Panel X (mm)" name="Option 1 X" class="panel-option-search" min=10 max=450>
+        </div>
+        <br>
+        <div class="field">
+          <input id="option1y" type="text" placeholder="Panel Y (mm)" name="Option 1 X" class="panel-option-search" min=10 max=500>
+        </div>
+        <br>
+        <div class="field">
+          <input id="pcb1" type="text" placeholder="Boards in Panel" name="PCB" class="panel-option-search" min=0>
+        </div>
+        <br>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="ui button go" onclick="generateTable()" name="Submit2" value=0>Go</button>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    
+    <div class='table-results' id='result'>
+      <table id="myTable" align='center' style='color:black' width=1200>
+        <tr id='table-headers' bgcolor="" align='center' >
+          <th id="vendor" width=120 bgcolor='' onclick="sortTable(0)"></th>
+          <th id='output' width=120 bgcolor='' onclick="sortTable(1)"></th>
+          
+          <th id='xopportunity' width=120 bgcolor='' onclick="sortTable(6)"></th>
+          <th id='xopportunity-output' width=120 bgcolor='' onclick="sortTable(7)"></th>
+          <th id='yopportunity' width=120 bgcolor='' onclick="sortTable(8)"></th>
+          <th id='yopportunity-output' width=120 bgcolor='' onclick="sortTable(9)"></th>
+
+          <th id ='xcliff' width=120 bgcolor='' onclick="sortTable(2)"></th>
+          <th id ='xcliff-output' width=120 bgcolor='' onclick="sortTable(3)"></th>
+          <th id='ycliff' width=120 bgcolor='' onclick="sortTable(4)"></th>
+          <th id ='ycliff-output' width=120 bgcolor='' onclick="sortTable(5)"></th>
+        </tr>
+        <tr align='center' >
+          <td id="Avary"></td>
+          <td id="Avary-output"></td>
+                    
+          <td id="Avary-xopportunity"></td>
+          <td id="Avary-xopportunity-output"></td>
+          <td id="Avary-yopportunity"></td>
+          <td id="Avary-yopportunity-output"></td>
+          
+          <td id="Avary-xcliff"></td>
+          <td id="Avary-xcliff-output"></td>
+          <td id="Avary-ycliff"></td>
+          <td id="Avary-ycliff-output"></td>
+        </tr>
+        <tr align='center' >
+          <td id="ATS"></td>
+          <td id="ATS-output"></td>
+                    
+          <td id="ATS-xopportunity"></td>
+          <td id="ATS-xopportunity-output"></td>
+          <td id="ATS-yopportunity"></td>
+          <td id="ATS-yopportunity-output"></td>
+
+          <td id="ATS-xcliff"></td>
+          <td id="ATS-xcliff-output"></td>
+          <td id="ATS-ycliff"></td>
+          <td id="ATS-ycliff-output"></td>
+        </tr>
+        <tr align='center' >
+          <td id="Compeq"></td>
+          <td id="Compeq-output"></td>
+                    
+          <td id="Compeq-xopportunity"></td>
+          <td id="Compeq-xopportunity-output"></td>
+          <td id="Compeq-yopportunity"></td>
+          <td id="Compeq-yopportunity-output"></td>
+
+          <td id="Compeq-xcliff"></td>
+          <td id="Compeq-xcliff-output"></td>
+          <td id="Compeq-ycliff"></td>
+          <td id="Compeq-ycliff-output"></td>
+        </tr>
+        <tr align='center' >
+          <td id="AKM"></td>
+          <td id="AKM-output"></td>
+                    
+          <td id="AKM-xopportunity"></td>
+          <td id="AKM-xopportunity-output"></td>
+          <td id="AKM-yopportunity"></td>
+          <td id="AKM-yopportunity-output"></td>          
+        
+          <td id="AKM-xcliff"></td>
+          <td id="AKM-xcliff-output"></td>
+          <td id="AKM-ycliff"></td>
+          <td id="AKM-ycliff-output"></td>
+        </tr>
+        <tr align='center' >
+          <td id="UMTC"></td>
+          <td id="UMTC-output"></td>
+                    
+          <td id="UMTC-xopportunity"></td>
+          <td id="UMTC-xopportunity-output"></td>
+          <td id="UMTC-yopportunity"></td>
+          <td id="UMTC-yopportunity-output"></td>
+          
+          <td id="UMTC-xcliff"></td>
+          <td id="UMTC-xcliff-output"></td>
+          <td id="UMTC-ycliff"></td>
+          <td id="UMTC-ycliff-output"></td>
+        </tr>
+      </table>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="heatmap" id="heatmap">
+
+    </div>
+
+  </body>
+
+
+  <footer>
+
+  </footer>
